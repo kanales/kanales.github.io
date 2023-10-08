@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Eleventy v1.0.2">
+    
+    
+    <meta name="description" content="Software Engineer | Mathematician">
+    
+    <title>Planetary Planning</title>
+
+    <link rel="stylesheet" href="/css/css.css"> 
+    
+</head>
+<body>
+    
+
+<article>
+    <p class="post-meta">
+	<a href="/">back ↩</a>
+	<time datetime="Fri Sep 15 2023 02:00:00 GMT+0200 (Central European Summer Time)">2023-09-15</time>
+    </p>
+    
+    <h1>Planetary Planning</h1>
+
+    
+  <p>Fortunately, you have a model that is capable of calculating the fuel storage requirements, as long as you know the <strong>average distance between points</strong> on the surface of the planet.</p>
+<p>Additionally, the model does not require the <a href="https://en.wikipedia.org/wiki/Geodesic">Geodesic distance</a> (i.e. the distance betwen poles would be the diameter, and not the length of the arc).</p>
+<p>You can assume that the planet is a <strong>perfect sphere</strong>. What is the distance between two points on the planet?</p>
+<p><em>Note:</em> for simplicity, use the radius of the planet as the distance unit.</p>
+<details>
+  <summary>Hint</summary> A Monte Carlo approach for this
+  problem may be helpful to get an idea of the result. To do
+  this, use that the multivariate normal distribution is
+  spherically symmetric: if X, Y, Z have a normal distribution
+  respectively, (X, Y, Z)/|(X, Y, Z)| has uniform distribution
+  over the sphere.
+</details>
+
+</article>
+
+</body>
+</html>
