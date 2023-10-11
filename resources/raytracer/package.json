@@ -1,0 +1,17 @@
+{
+  "name": "raytracer-rs",
+  "collaborators": [
+    "kanales <ivancanalestgna@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "raytracer_rs_bg.wasm",
+    "raytracer_rs.js",
+    "raytracer_rs.d.ts"
+  ],
+  "module": "raytracer_rs.js",
+  "types": "raytracer_rs.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

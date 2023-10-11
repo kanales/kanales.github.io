@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Eleventy v1.0.2">
+    
+    
+    <meta name="description" content="Software Engineer | Mathematician">
+    
+    <title>WASM Raytracer</title>
+
+    <link rel="stylesheet" href="/css/css.css"> 
+    
+</head>
+<body>
+    
+
+<article>
+    <p class="post-meta">
+	<a href="/">back ↩</a>
+	<time datetime="Sun Apr 03 2022 02:00:00 GMT+0200 (Central European Summer Time)">2022-04-03</time>
+    </p>
+    
+    <h1>WASM Raytracer</h1>
+
+    
+  <p>Leveraging <a href="https://webassembly.org">WASM</a> it is possible to create high performance programs running in the client.</p>
+<p>This demo uses raytracing to showcase how powerful WASM can be.</p>
+<p><canvas id="canvas" width="300" height="150"></canvas></p>
+<p>Updating the canvas using JavaScript is very resource intensive; using WASM this animation can run even on phone browsers.</p>
+<p>The code for this is implemented in Rust, and can be fond here: <a href="https://github.com/kanales/raytracer-wasm">https://github.com/kanales/raytracer-wasm</a>.</p>
+<script type="module">
+import init, { animate } from "/resources/raytracer/raytracer_rs.js";
+async function run() {
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  await init();
+  animate(ctx, 300, 150);	   
+}
+run();
+</script>
+
+</article>
+
+</body>
+</html>

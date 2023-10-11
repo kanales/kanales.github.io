@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Eleventy v1.0.2">
+    
+    
+    <meta name="description" content="Software Engineer | Mathematician">
+    
+    <title>The Tin programming language</title>
+
+    <link rel="stylesheet" href="/css/css.css"> 
+    
+</head>
+<body>
+    
+
+<article>
+    <p class="post-meta">
+	<a href="/">back ↩</a>
+	<time datetime="Sat Apr 09 2022 02:00:00 GMT+0200 (Central European Summer Time)">2022-04-09</time>
+    </p>
+    
+    <h1>The Tin programming language</h1>
+
+    
+  <p>Thin is a lisp implementation inspired in Scheme. The implementation was made in Rust, and it can be found in my github: <a href="https://github.com/kanales/tin">https://github.com/kanales/tin</a>.</p>
+<h2>Features</h2>
+<ul>
+<li>Hash maps</li>
+<li>Vectors</li>
+<li>Macros</li>
+<li>Mariadic arguments</li>
+</ul>
+<h2>Differences with Scheme</h2>
+<p>Although Tin is mainly based of the Scheme dialect, it does present some differences with scheme.</p>
+<h3>Vectors</h3>
+<p>Instead of using the <code>#( ... )</code> syntax for vectors, the <code>[ ... ]</code> is used in Tin. This is inspired<br>
+in Clojure and other (non lisp) programming languages like Python.</p>
+<h3>Hash maps</h3>
+<p>Tin provides a hash map datatype that can be created by using the <code>make-hash</code> function on a<br>
+sequence of key-value pairs, or by using the hash construct <code>{ ... }</code>. For example:</p>
+<pre><code class="language-scheme">(define my-map { 'a 1 'b 2 })
+</code></pre>
+<h3>Index by call</h3>
+<p>In Tin the notion of (hash)map and vector is interpreted as a <em>mapping</em> from the index space to the<br>
+value space. Therefore, both <code>hash</code> and <code>vector</code> values can be evaluated on its indices:</p>
+<pre><code class="language-scheme">&gt; ({ 'a 1 'b 2 } 'a)
+1
+&gt; (['a 'b 'c] 2) ; vectors are 0-indexed *this might change in the future*
+b 
+</code></pre>
+<h3>Macros</h3>
+<p>Macros in Tin are defined using the <code>defmacro</code> function:</p>
+<pre><code class="language-lisp">(defmacro defn (name args body) 
+    `(define ,name (lambda ,args ,body)))
+(defn plus-1 (x) (+ 1 x))
+</code></pre>
+
+</article>
+
+</body>
+</html>
